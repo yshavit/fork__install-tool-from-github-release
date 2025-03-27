@@ -171,9 +171,10 @@ runs:
         
     - name: Debug info
       run: |
-        ls -lhtr
+        echo '0 ============================='
+        which mdq
         echo 'A ============================='
-        echo "$CMD"
+        dirname $(which mdq)
         echo 'B ============================='
         readlink -f $(which mdq)
         file "$(which mdq)"
