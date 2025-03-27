@@ -172,8 +172,16 @@ runs:
     - name: Debug info
       run: |
         ls -lhtr
-        echo '============================='
+        echo 'A ============================='
         echo "$CMD"
+        echo 'B ============================='
+        readlink -f $(which mdq)
+        file "$(which mdq)"
+        echo 'C ============================='
+        ls -lhtr $(dirname "$(readlink -f $(which mdq)))
+        echo 'D ============================='
+        
+        
       shell: bash
       env:
         CMD: ${{ inputs.check_command }}
