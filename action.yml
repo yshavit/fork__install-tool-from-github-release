@@ -172,14 +172,11 @@ runs:
     - name: Debug info
       run: |
         echo '0 ============================='
-        which mdq
+        ls -R /opt/hostedtoolcache/mdq/0.4.0/x64
         echo 'A ============================='
-        dirname $(which mdq)
+        file /opt/hostedtoolcache/mdq/0.4.0/x64/mdq || echo "NO SUCH FILE"
         echo 'B ============================='
-        readlink -f $(which mdq)
-        file "$(which mdq)"
-        echo 'C ============================='
-        ls -lhtr $(dirname "$(readlink -f $(which mdq)))
+        /opt/hostedtoolcache/mdq/0.4.0/x64/mdq --version
         echo 'D ============================='
         
         
