@@ -176,8 +176,9 @@ runs:
         echo 'A ============================='
         file /opt/hostedtoolcache/mdq/0.4.0/x64/mdq || echo "NO SUCH FILE"
         echo 'B ============================='
-        /opt/hostedtoolcache/mdq/0.4.0/x64/mdq --version
+        chmod +x /opt/hostedtoolcache/mdq/0.4.0/x64/mdq
         echo 'D ============================='
+        /opt/hostedtoolcache/mdq/0.4.0/x64/mdq --version
         
         
       shell: bash
