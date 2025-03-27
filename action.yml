@@ -168,6 +168,14 @@ runs:
         alias_path="$(dirname "${target_path}")/${alias}"
 
         ln -s "${target_path}" "${alias_path}"
+        
+    - name: Debug info
+      run: |
+        ls -lhtr
+        echo '============================='
+        echo "$CMD"
+      env:
+        CMD: ${{ inputs.check_command }}
 
     - name: Check
       if: inputs.check_command
