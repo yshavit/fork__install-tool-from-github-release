@@ -170,6 +170,7 @@ runs:
         ln -s "${target_path}" "${alias_path}"
         
     - name: Debug info
+      if: false
       run: |
         echo '0 ============================='
         ls -R /opt/hostedtoolcache/mdq/0.4.0/x64
