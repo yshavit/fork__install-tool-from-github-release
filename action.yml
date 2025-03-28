@@ -176,7 +176,7 @@ runs:
         echo 'A ============================='
         file /opt/hostedtoolcache/mdq/${{ inputs.version }}/x64/mdq || echo "NO SUCH FILE"
         echo 'B ============================='
-        chmod +x /opt/hostedtoolcache/mdq/${{ inputs.version }}/x64/mdq
+        # chmod +x /opt/hostedtoolcache/mdq/${{ inputs.version }}/x64/mdq
         echo 'D ============================='
         ls -lhtr /opt/hostedtoolcache/mdq/${{ inputs.version }}/x64/mdq
         
