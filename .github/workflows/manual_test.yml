@@ -15,8 +15,8 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install MDQ
-        # uses: ./
-        uses: action-stars/install-tool-from-github-release@ece2623611b240002e0dd73a0d685505733122f6
+        uses: ./
+        #uses: action-stars/install-tool-from-github-release@ece2623611b240002e0dd73a0d685505733122f6
         with:
           github_token: ${{ github.token }}
           owner: yshavit
