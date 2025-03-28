@@ -1,6 +1,10 @@
 name: Manual Test
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        required: true
 
 jobs:
   test:
@@ -21,4 +25,4 @@ jobs:
           extract_mode_macos: zip
           filename_format: "{name}-{os}.{ext}"
           check_command: mdq --version
-          version: latest
+          version: ${{ inputs.version }}
