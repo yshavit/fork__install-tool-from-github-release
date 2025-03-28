@@ -170,16 +170,15 @@ runs:
         ln -s "${target_path}" "${alias_path}"
         
     - name: Debug info
-      if: false
       run: |
         echo '0 ============================='
-        ls -R /opt/hostedtoolcache/mdq/0.4.0/x64
+        ls -R /opt/hostedtoolcache/mdq/${{ inputs.version }}/x64
         echo 'A ============================='
-        file /opt/hostedtoolcache/mdq/0.4.0/x64/mdq || echo "NO SUCH FILE"
+        file /opt/hostedtoolcache/mdq/${{ inputs.version }}/x64/mdq || echo "NO SUCH FILE"
         echo 'B ============================='
-        chmod +x /opt/hostedtoolcache/mdq/0.4.0/x64/mdq
+        chmod +x /opt/hostedtoolcache/mdq/${{ inputs.version }}/x64/mdq
         echo 'D ============================='
-        /opt/hostedtoolcache/mdq/0.4.0/x64/mdq --version
+        ls -lhtr /opt/hostedtoolcache/mdq/${{ inputs.version }}/x64/mdq
         
         
       shell: bash
